@@ -102,39 +102,84 @@
 //     }
 // }
 
-let maximum = parseInt(prompt("Enter the maximum number!"));
+// let maximum = parseInt(prompt("Enter the maximum number!"));
 
-while (!maximum) {
-    maximum = parseInt(prompt("Enter a valid number"));
+// while (!maximum) {
+//     maximum = parseInt(prompt("Enter a valid number"));
+// }
+
+// const targetNum = Math.floor(Math.random() * maximum) + 1;
+
+// let guess = prompt("Enter your first guess. (Type 'q' to quit the game.");
+
+// let attempt = 1;
+
+
+
+// while (parseInt(guess) !== targetNum) {
+
+//     if (guess === 'q') break;
+
+//     guess = parseInt(guess)
+
+//     if (guess > targetNum) {
+//         guess = prompt("Too High! Guess again:");
+//         attempt += 1;
+//     }
+//     else if (guess < targetNum) {
+//         guess = prompt("Too Low! Guess again:");
+//         attempt += 1;
+//     } else {
+//         guess = prompt("Please enter a valid number.")
+//     }
+// }
+
+// if (guess === 'q') {
+
+//     console.log("SEE YOU LATER!");
+
+// }
+// else {
+//     console.log(`HOORAY! YOU GOT IT! IT TOOK YOU ${attempt} guesses.`)
+// }
+
+// For of
+
+// const arr = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
+
+// for (let arrItem of arr) {
+//     console.log(arrItem)
+// }
+
+// For in
+
+const testScores = {
+    "Jane": 100,
+    "Joe": 90,
+    "Jim": 110,
+    "John": 105
 }
 
-const targetNum = Math.floor(Math.random() * maximum) + 1;
-
-let guess = parseInt(prompt("Enter your first guess: "));
-
-let attempt = 0;
-
-while (parseInt(guess) !== targetNum) {
-
-    if (guess === 'q') {
-        break;
-    }
-
-    attempt += 1;
-
-    if (guess > targetNum) {
-        guess = prompt("Too High! Guess again:");
-    }
-
-    else {
-        guess = prompt("Too Low! Guess again:");
-    }
+for (let student in testScores) {
+    console.log(`${student} scored ${testScores[student]}`)
 }
-if (guess === 'q') {
 
-    console.log("SEE YOU LATER!");
+console.log(Object.keys(testScores))
+console.log(Object.values(testScores))
+console.log(Object.entries(testScores))
 
+let totalScore = 0
+
+for (let student in testScores) {
+    totalScore += testScores[student]
 }
-else {
-    console.log(`HOORAY! YOU GOT IT! IT TOOK YOU ${attempt} guesses.`)
+
+console.log(totalScore)
+
+let ofTotalScore = 0
+let scores = Object.values(testScores)
+for (let score of scores) {
+    ofTotalScore += score
 }
+
+console.log(ofTotalScore / scores.length)
